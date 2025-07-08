@@ -1,8 +1,4 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Moon, Sun } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
@@ -11,10 +7,11 @@ export default function Portfolio() {
     <div className={darkMode ? "dark bg-gray-900 text-white" : "bg-white text-black"}>
       <div className="container mx-auto p-4 min-h-screen transition-colors">
         <div className="flex justify-end">
-          <Button variant="ghost" onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? <Sun /> : <Moon />}
-          </Button>
+          <button onClick={() => setDarkMode(!darkMode)} className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700">
+            {darkMode ? "☀️" : "🌙"}
+          </button>
         </div>
+
         <div className="text-center mt-10">
           <img
             src="/shubham-profile.jpg"
@@ -35,12 +32,14 @@ export default function Portfolio() {
             Download Resume
           </a>
         </div>
+
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">About Me</h2>
           <p>
             Driven ITAM & CMDB Analyst with 4 years of experience, specializing in maintaining accurate configuration item data and optimizing IT asset lifecycle processes. Proven expertise in leveraging ServiceNow and Cherwell for CMDB discovery, health management, and ensuring software license compliance.
           </p>
         </section>
+
         <section className="mt-12">
           <h2 className="text-2xl font-semibold mb-4">Skills</h2>
           <ul className="grid grid-cols-2 gap-2">
@@ -49,23 +48,26 @@ export default function Portfolio() {
             <li>HTML5, CSS3, JavaScript</li><li>ReactJS</li><li>Microsoft Intune</li><li>Excel, SCCM, Bomgar</li>
           </ul>
         </section>
+
         <section className="mt-12">
           <h2 className="text-2xl font-semibold mb-4">Experience</h2>
-          <Card className="mb-4"><CardContent>
+          <div className="mb-4 bg-white dark:bg-gray-800 p-4 rounded shadow">
             <h3 className="text-lg font-bold">ITAM & CMDB Analyst @ Consumers Energy (HCLTech)</h3>
             <p className="text-sm text-gray-500">2024 – June 2025</p>
             <p className="mt-2">Maintained CMDB, executed discovery processes, managed server retirement & asset replacement, ensured 3Cs of data, and created CMDB health reports.</p>
-          </CardContent></Card>
-          <Card className="mb-4"><CardContent>
+          </div>
+          <div className="mb-4 bg-white dark:bg-gray-800 p-4 rounded shadow">
             <h3 className="text-lg font-bold">ITAM & CMDB Analyst @ SC Johnson (HCLTech)</h3>
             <p className="text-sm text-gray-500">2021 – June 2024</p>
             <p className="mt-2">Managed full asset and license lifecycle, tracked configuration dependencies, handled vendor negotiations, led audits, and trained users on ServiceNow and Cherwell.</p>
-          </CardContent></Card>
+          </div>
         </section>
+
         <section className="mt-12">
           <h2 className="text-2xl font-semibold mb-4">Education</h2>
           <p><strong>BITS Pilani</strong> – Bachelor's in Design and Computing (2022 – 2026)</p>
         </section>
+
         <footer className="mt-20 text-center text-sm text-gray-500 dark:text-gray-400">
           &copy; {new Date().getFullYear()} Shubham Roy. All rights reserved.
         </footer>
@@ -73,3 +75,4 @@ export default function Portfolio() {
     </div>
   );
 }
+
